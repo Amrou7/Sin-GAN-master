@@ -9,9 +9,9 @@ import imageio
 
 if __name__ == '__main__':
     parser = get_arguments()
-    parser.add_argument('--input_dir', help='input image dir', default='Input/GaussianNoise')
+    parser.add_argument('--input_dir', help='input image dir', default='Sin-GAN-master/Input/GaussianNoise')
     parser.add_argument('--input_name', help='training image name', required=True)
-    parser.add_argument('--ref_dir', help='input reference dir', default='Input/Filtered')
+    parser.add_argument('--ref_dir', help='input reference dir', default='Sin-GAN-master/Input/Filtered')
     parser.add_argument('--ref_name', help='reference image name', required=True)
     parser.add_argument('--paint_start_scale', help='paint injection scale', type=int, required=True)
     parser.add_argument('--quantization_flag', help='specify if to perform color quantization training', type=bool, default=False)
