@@ -7,7 +7,7 @@ import SinGAN.functions as functions
 
 if __name__ == '__main__':
     parser = get_arguments()
-    parser.add_argument('--input_dir', help='input image dir', default='Input/Images')
+    parser.add_argument('--input_dir', help='input image dir', default='Sin-GAN-master/Input/Images')
     parser.add_argument('--input_name', help='training image name', default="33039_LR.png")#required=True)
     parser.add_argument('--sr_factor', help='super resolution factor', type=float, default=4)
     parser.add_argument('--mode', help='task to be done', default='SR')
