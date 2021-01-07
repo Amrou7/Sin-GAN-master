@@ -19,17 +19,21 @@ input_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/
 noisy_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/GaussianNoise/'
 output_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Output/Paint2image/'
 
-image_name = 'baboon.png'
-noisy = imageio.imread(noisy_path+image_name)/255
-image = imageio.imread(input_path+image_name)/255
-image = resize(image, noisy.shape, mode='reflect')
+image = imageio.imread(input_path+"Lenna.png")/255
+noisy = imageio.imread(noisy_path+'sigma=30-Lenna.png')/255
+noisy = resize(noisy, image.shape, mode='reflect')
+plt.imshow(noisy)
+plt.show()
+plt.imshow(image)
+plt.show()
 
-output = imageio.imread(output_path+'/baboon/baboon_out/start_scale=4.png')/255
-output = resize(output, noisy.shape, mode='reflect')
+output = imageio.imread(output_path+'sigma=30-Lenna/sigma=30-Lenna_out/start_scale=9.png')/255
+output = resize(output, image.shape, mode='reflect')
 plt.imshow(output)
 plt.show()
 
 
 print("Noisy image PSNR", psnr(image, noisy))
 print("Denoised image PSNR", psnr(image, output))
+
 
