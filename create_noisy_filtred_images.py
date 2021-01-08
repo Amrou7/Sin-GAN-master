@@ -11,14 +11,14 @@ import random
 
 input_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/Set14/'
 noisy_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/GaussianNoise/'
+SP_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/SP_Noise/'
 filtered_path = 'C:/Files/M2 MVA/S1/Object recognition/Project/SinGAN-master/Input/Filtered/'
 
 
 _, _, filenames = next(walk(input_path))
 print(filenames)
 
-
-noise_type = "Gaussian" ## Gaussian Or SP
+noise_type = "SP" ## Gaussian Or SP
 
 for image_name in filenames:
     image = imageio.imread(input_path+image_name)/255
@@ -65,7 +65,7 @@ for image_name in filenames:
                     
         plt.imshow(noisy_image)
         plt.show()
-        imageio.imwrite(noisy_path+"SP-"+image_name, noisy_image)
+        imageio.imwrite(SP_path+"SP-"+image_name, noisy_image)
         
         
         filtered = np.zeros(image.shape)
